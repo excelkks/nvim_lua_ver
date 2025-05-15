@@ -1,9 +1,10 @@
-local is_ok, gitsigns = pcall(require, 'gitsigns')
-if not is_ok then
-    return
-end
+return {
+  "tpope/vim-fugitive",
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup( {
 
-gitsigns.setup {
     signs                        = {
         add          = { text = '│' },
         change       = { text = '│' },
@@ -41,4 +42,7 @@ gitsigns.setup {
         row = 0,
         col = 1
     },
+      })
+    end,
+  },
 }
